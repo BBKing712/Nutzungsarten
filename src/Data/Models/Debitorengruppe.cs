@@ -7,11 +7,11 @@ using System.Collections.Generic;
 
 namespace Data.Models
 {
-    public partial class Debitorengruppen
+    public partial class Debitorengruppe
     {
-        public Debitorengruppen()
+        public Debitorengruppe()
         {
-            ExterneNutzungsarten = new HashSet<ExterneNutzungsarten>();
+            ExterneNutzungsarten = new HashSet<ExterneNutzungsart>();
         }
 
         public long Id { get; set; }
@@ -21,6 +21,6 @@ namespace Data.Models
         public DateTime? AktualisiertAm { get; set; }
         public bool? IstStandard { get; set; }
 
-        public virtual ICollection<ExterneNutzungsarten> ExterneNutzungsarten { get; set; }
+        public virtual ICollection<ExterneNutzungsart> ExterneNutzungsarten { get; set; }
     }
 }

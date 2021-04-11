@@ -19,9 +19,9 @@ namespace Data.Models
         {
         }
 
-        public virtual DbSet<Buonutzungsarten> Buonutzungsarten { get; set; }
-        public virtual DbSet<Debitorengruppen> Debitorengruppen { get; set; }
-        public virtual DbSet<ExterneNutzungsarten> ExterneNutzungsarten { get; set; }
+        public virtual DbSet<Buonutzungsart> Buonutzungsarten { get; set; }
+        public virtual DbSet<Debitorengruppe> Debitorengruppen { get; set; }
+        public virtual DbSet<ExterneNutzungsart> ExterneNutzungsarten { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -34,7 +34,7 @@ namespace Data.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Buonutzungsarten>(entity =>
+            modelBuilder.Entity<Buonutzungsart>(entity =>
             {
                 entity.ToTable("BUONutzungsarten");
 
@@ -63,7 +63,7 @@ namespace Data.Models
                 entity.Property(e => e.Guid).HasDefaultValueSql("(newid())");
             });
 
-            modelBuilder.Entity<Debitorengruppen>(entity =>
+            modelBuilder.Entity<Debitorengruppe>(entity =>
             {
                 entity.HasIndex(e => e.Bezeichnung)
                     .HasName("UQ_Debitorengruppen_Bezeichnung")
@@ -92,7 +92,7 @@ namespace Data.Models
                 entity.Property(e => e.IstStandard).HasDefaultValueSql("((0))");
             });
 
-            modelBuilder.Entity<ExterneNutzungsarten>(entity =>
+            modelBuilder.Entity<ExterneNutzungsart>(entity =>
             {
                 entity.HasIndex(e => e.Guid)
                     .HasName("UQ_ExterneNutzungsarten_Guid")

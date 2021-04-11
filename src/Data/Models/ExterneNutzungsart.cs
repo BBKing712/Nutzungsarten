@@ -7,19 +7,17 @@ using System.Collections.Generic;
 
 namespace Data.Models
 {
-    public partial class Buonutzungsarten
+    public partial class ExterneNutzungsart
     {
-        public Buonutzungsarten()
-        {
-            ExterneNutzungsarten = new HashSet<ExterneNutzungsarten>();
-        }
-
         public long Id { get; set; }
         public string Bezeichnung { get; set; }
         public Guid Guid { get; set; }
         public DateTime? ErstelltAm { get; set; }
         public DateTime? AktualisiertAm { get; set; }
+        public long? DebitorengruppenId { get; set; }
+        public long? BuonutzungsartenId { get; set; }
 
-        public virtual ICollection<ExterneNutzungsarten> ExterneNutzungsarten { get; set; }
+        public virtual Buonutzungsart Buonutzungsarten { get; set; }
+        public virtual Debitorengruppe Debitorengruppen { get; set; }
     }
 }
