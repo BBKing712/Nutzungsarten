@@ -3,3 +3,5 @@
 /test/TestConsole/bin
 /test/TestConsole/obj
 /.vs/Nutzungsarten/DesignTimeBuild/.dtbcache.v2
+/src/API/bin
+/src/API/obj
